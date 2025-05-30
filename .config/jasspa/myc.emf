@@ -1,0 +1,11 @@
+; -!- emf -!-
+; Copyright (C) 2025 MicroEmacs User.
+;
+;
+; Synopsis:    
+; Authors:     MicroEmacs User
+;
+; cpplint pip3 install cpp-lint --user
+set-variable %fhook-c-lint "clang-tidy %f" 
+set-variable %fhook-c-exec "gcc %f -o %b && ./%b"
+set-variable %fhook-c-format "clang-format %f"
