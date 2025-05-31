@@ -3,6 +3,15 @@
 SCRIPT_DIR=$(dirname "$0")
 cp -r ${SCRIPT_DIR}/.config/jasspa ~/.config/
 /bin/sh -c "$(curl -fsSL https://github.com/bjasspa/jasspa/releases/latest/download/microemacs-install)"
+if [[ `which cppcheck` == "" ]]; then 
+    pip3 install cppcheck --user
+fi
+if [[ `which cpplint` == "" ]]; then 
+    pip3 install cpplint --user
+fi
+if [[ `which astyle` == "" ]]; then 
+    pip3 install astyle --user
+fi
 
 function install-fonts {
     if [[ -z $1 ]]; then
@@ -33,4 +42,4 @@ function install-fonts {
     xset fp rehash
 }   
 install-fonts 
-#alias mfontsel2="xfontsel -pattern '-*-m-*-' -scale"
+alias mfontsel2="xfontsel -pattern '-*-m-*-' -scale"
