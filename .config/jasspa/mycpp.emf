@@ -7,6 +7,19 @@
 ; Authors:     MicroEmacs User
 ;
 ; cpplint pip3 install cpp-lint --user
-set-variable %fhook-cpp-lint "clang-tidy %f" 
-set-variable %fhook-cpp-exec "g++ %f -o %b && ./%b"
-set-variable %fhook-cpp-format "clang-format %f"
+define-macro-file filtools file-lint file-format file-exec
+set-variable #l0 &which "astyle"
+set-variable #l1 &which "clang-format"
+!if &not &seq #l0 "ERROR"
+  set-variable %fhook-cpp-format "astyle --indent=spaces=4 %f"
+!elif &not &seq #l1 "ERROR"
+  set-variable %fhook-cpp-format "clang-format -i -style='{BasedOnStyle: llvm, IndentWidth: 4}' %f"
+!endif
+set-variable #l0 &which "clang-tidy"
+!if &not &seq #l0 "ERROR"
+  set-variable %fhook-cpp-lint "clang-tidy %f -- -std=c++17" 
+!endif
+set-variable #l0 &which "g++"
+!if &not &seq #l0 "ERROR"
+  set-variable %fhook-cpp-exec "g++ -std=c++17 %f -o %b && ./%b"
+!endif

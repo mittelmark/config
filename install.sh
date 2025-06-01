@@ -42,4 +42,3 @@ function install-fonts {
     xset fp rehash
 }   
 install-fonts 
-alias mfontsel2="xfontsel -pattern '-*-m-*-' -scale"
