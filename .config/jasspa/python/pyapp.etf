@@ -1,0 +1,26 @@
+#!/usr/bin/env python3
+# -*- coding: ISO-8859-15 -*-
+"""
+Module: name and purpose
+File: $FILE_NAME$
+Authors: $USER_NAME$, University of Potsdam, $YEAR$
+Date: $ASCII_TIME$
+Homework: Week X - Topic
+"""
+__AUTHOR__ = "$USER_NAME$, University of Potsdam, $YEAR$"
+import sys
+def help():
+    print(__doc__)
+def usage(argv):
+    """
+    Display the usage line
+    """
+    print(f"Appname by {__AUTHOR__}")
+    print(f"Usage: {argv[0]} --arg value")
+def main (argv):
+    if len(argv) == 1:
+       usage(argv)
+    elif "-h" in argv or "--help" in argv:
+        help(argv)
+if __name__ == "__main__":
+    main(sys.argv)
