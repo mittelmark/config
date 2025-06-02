@@ -2,7 +2,7 @@
 ;
 ;  Created By    : Detlef Groth, University of Potsdam, Germany
 ;  Created       : Mon Mar 24 11:14:06 2025
-;  Last Modified : <250602.1006>
+;  Last Modified : <250602.1009>
 ;
 ;  Description   : Support for editing language files with generic
 ;                  macros file-exec, file-format and file-lint using the 
@@ -218,7 +218,7 @@ allowing easy support of other programming languages.
     set-variable %fhook-go-lint       "go vet %f"
     set-variable %fhook-go-exec       "go run %f"
     ; working with C++ code using cppcheck, astyle and g++
-    set-variable %fhook-cpp-lint "cppcheck --quiet --enable=all --suppress=missingIncludeSystem %s"
+    set-variable %fhook-cpp-lint "cppcheck --quiet --enable=all --suppress=missingIncludeSystem %f"
     set-variable %fhook-cpp-exec "g++ %f 2>&1 -o %b; ./%b"
     set-variable %fhook-cpp-format "astyle %f"
     ; command execution
