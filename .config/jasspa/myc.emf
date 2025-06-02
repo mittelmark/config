@@ -6,6 +6,6 @@
 ; Authors:     MicroEmacs User
 ;
 ; cpplint pip3 install cpp-lint --user
-set-variable %fhook-c-lint "clang-tidy %f" 
+set-variable %fhook-c-lint "clang-tidy %f -- -std=c99" 
 set-variable %fhook-c-exec "gcc %f -o %b && ./%b"
-set-variable %fhook-c-format "clang-format %f"
+set-variable %fhook-c-format "clang-format -i -style='{BasedOnStyle: llvm, IndentWidth: 4}' %f -- -std=c99"
