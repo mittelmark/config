@@ -20,13 +20,13 @@ function install-fonts {
         wget -q https://github.com/braver/programmingfonts/raw/gh-pages/fonts/resources/ubuntu/license.txt -O ${DIR}/ubuntu-license.txt    
     fi  
     if [[ ! -f ${DIR}/source-code-pro-medium.ttf ]]; then 
-        echo "installing source code pro fonts ..."
+        echo "installing Source Code Pro fonts ..."
         wget -q https://github.com/adobe-fonts/source-code-pro/raw/release/LICENSE.md -O ${DIR}/source-code-pro-license.txt
 	wget -q https://github.com/adobe-fonts/source-code-pro/raw/release/TTF/SourceCodePro-Bold.ttf -O ${DIR}/source-code-pro-bold.ttf
 	wget -q https://github.com/adobe-fonts/source-code-pro/raw/release/TTF/SourceCodePro-Regular.ttf -O ${DIR}/source-code-pro-medium.ttf     
     fi	
     if [[ ! -f ${DIR}/courier-prime-medium.ttf ]]; then 
-        echo "installing courier prime fonts ..."
+        echo "installing Courier Prime fonts ..."
         wget -q https://github.com/quoteunquoteapps/CourierPrime/raw/master/fonts/ttf/CourierPrime-Regular.ttf -O ${DIR}/courier-prime-medium.ttf
 	wget -q https://github.com/quoteunquoteapps/CourierPrime/raw/master/fonts/ttf/CourierPrime-Bold.ttf -O ${DIR}/courier-prime-bold.ttf
 	wget -q https://github.com/quoteunquoteapps/CourierPrime/blob/master/OFL.txt -O ${DIR}/courier-prime-license.txt
