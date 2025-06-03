@@ -3,7 +3,7 @@ alias mfontsel="xfontsel -pattern '*-m-*' -scale"
 export PATH=~/.local/bin:$PATH
 function backup-cpp {
     cd ~
-    zip -yr .config/jasspa .local/bin .local/share/jasspa \
+    zip -yr backup-cpp-`date +%Y-%m-%d`.zip .config/jasspa .local/bin .local/share/jasspa \
         .local/share/fonts ./PEX-labs
 }
         
