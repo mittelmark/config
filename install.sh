@@ -35,5 +35,15 @@ function install-fonts {
     mkfontdir $DIR
     xset +fp $DIR
     xset fp rehash
+    echo "Fonts installed!"
 }   
+
+function install-tmux {
+    wget -q https://github.com/nelsonenzo/tmux-appimage/releases/download/3.3a/tmux.appimage -O ~/.local/bin/tmux
+    chmod 755 ~/.local/bin/tmux
+    echo "tmux installed"
+}
 install-fonts 
+
+
+install-tmux
