@@ -1,5 +1,6 @@
 #!/bin/bash
 alias mfontsel="xfontsel -pattern '*-m-*' -scale"
+alias curl-cheat="curl cheat.sh"
 export PATH=~/.local/bin:$PATH
 function backup-cpp {
     cd ~
