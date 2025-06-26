@@ -3,7 +3,7 @@
 SCRIPT_DIR=$(dirname "$0")
 cp -r ${SCRIPT_DIR}/.config/jasspa ~/.config/
 /bin/sh -c "$(curl -fsSL https://github.com/bjasspa/jasspa/releases/latest/download/microemacs-install)"
-
+cat bashrc.sh >> ~/.bashrc
 function install-fonts {
     if [[ -z $1 ]]; then
         DIR=~/.local/share/fonts
@@ -41,9 +41,21 @@ function install-fonts {
 function install-tmux {
     wget -q https://github.com/nelsonenzo/tmux-appimage/releases/download/3.3a/tmux.appimage -O ~/.local/bin/tmux
     chmod 755 ~/.local/bin/tmux
-    echo "tmux installed"
+    echo "tmux installed ~/.local/bin"
+}
+function install-bat {
+    wget -q https://github.com/sharkdp/bat/releases/download/v0.25.0/bat-v0.25.0-x86_64-unknown-linux-gnu.tar.gz
+    tar xfvz bat-v0.25.0-x86_64-unknown-linux-gnu.tar.gz
+    cp bat-v0.25.0-x86_64-unknown-linux-gnu/bat ~/.local/bin/
+    chmod 755 ~/.local/bin/bat
+    [[ -d ~/.local/man ]] || mkdir -p ~/.local/man
+    cp bat-v0.25.0-x86_64-unknown-linux-gnu/bat.1 ~/.local/man/
+    rm -rf bat-v0.25.0-x86_64-unknown-linux-gnu*
+    echo "bat installed  into ~/.local/bin"
 }
 install-fonts 
 
-
 install-tmux
+
+install-bat
+
